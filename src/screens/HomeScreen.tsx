@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import poster from "../assets/poster.png";
 import { Footer } from "../components/Footer";
@@ -45,11 +45,6 @@ export const HomeScreen = () => {
       question: "How can you contact us?",
       answer:
         "Click the Contact Us button in the Footer or NavBar to quickly send us an email or WhatsApp message.",
-    },
-    {
-      question: "Do you offer delivery services?",
-      answer:
-        "Yes! We deliver across selected locations. You can check availability during checkout or contact our support team.",
     },
     {
       question: "Can I return or exchange a product?",

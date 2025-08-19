@@ -1,6 +1,6 @@
-import React from "react";
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
+import { easeOut } from "framer-motion";
 
 import img1 from "../assets/IMG-20250819-WA0004.jpg";
 import img2 from "../assets/IMG-20250819-WA0005.jpg";
@@ -428,9 +428,10 @@ const itemVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.4, ease: easeOut },
   },
 };
+
 
 export const Cakes = () => {
   return (
@@ -472,7 +473,7 @@ export const Cakes = () => {
           ))}
         </motion.div>
       </main>
-      
+
       <Footer />
     </>
   );
