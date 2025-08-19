@@ -2,15 +2,16 @@ import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import logo from "../assets/logo.png";
 import { motion } from "framer-motion";
+import caligraphy from "../assets/caligraphy.png";
 
 const About = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 mt-[50px]">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       {/* NavBar */}
       <NavBar />
 
       {/* About Me Section */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 pt-28 pb-16 flex-1">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +32,7 @@ const About = () => {
             className="flex justify-center"
           >
             <img
-              src={logo} // replace with your portrait photo if you have one
+              src={logo}
               alt="Baker"
               className="w-[350px] h-[350px] object-cover rounded-full shadow-xl hover:scale-105 transition-transform duration-300"
             />
@@ -62,6 +63,18 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Website Managed By - Bottom Right */}
+      <div className="flex justify-end pr-6 pb-4">
+        <div className="text-right">
+          <p className="text-xs text-gray-500">Website managed by</p>
+          <img
+            src={caligraphy}
+            alt="Rafael Angelo"
+            className="w-24 opacity-80"
+          />
+        </div>
+      </div>
 
       {/* Footer */}
       <Footer />
