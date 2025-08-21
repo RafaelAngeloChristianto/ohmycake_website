@@ -205,6 +205,7 @@ import img200 from "../assets/IMG-20250819-WA0203.jpg";
 import img201 from "../assets/IMG-20250819-WA0204.jpg";
 import img202 from "../assets/IMG-20250819-WA0205.jpg";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const cakeImages = [
   img1,
@@ -416,12 +417,11 @@ const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05, // delay between items
+      staggerChildren: 0.05,
     },
   },
 };
 
-// Animation variants for each image card
 const itemVariants = {
   hidden: { opacity: 0, scale: 0.8, y: 30 },
   show: {
@@ -432,8 +432,9 @@ const itemVariants = {
   },
 };
 
-
 export const Cakes = () => {
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
+
   return (
     <>
       <NavBar />
@@ -468,10 +469,31 @@ export const Cakes = () => {
                 className="w-full h-56 object-cover rounded-xl cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.3 }}
+                onClick={() => setSelectedImg(img)}
               />
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Modal for selected image */}
+        {selectedImg && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
+            onClick={() => setSelectedImg(null)}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.img
+              src={selectedImg}
+              alt="Selected Cake"
+              className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl cursor-pointer"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.div>
+        )}
       </main>
 
       <Footer />
