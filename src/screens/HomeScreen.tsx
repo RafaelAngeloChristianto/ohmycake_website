@@ -84,12 +84,6 @@ export const HomeScreen = () => {
               delicious memories
             </span>{" "}
             with every slice ✨{" "}
-            <Link
-              to="/contact"
-              className="ml-1 sm:ml-2 underline hover:text-[#FF00FF] transition"
-            >
-              Go Get Yours Now
-            </Link>
           </motion.p>
         </div>
       </div>
@@ -152,16 +146,17 @@ export const HomeScreen = () => {
       </section>
 
       {/* Quick Videos */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-[42px] text-center mb-14 font-Nunito font-bold text-[#FF00FF]"
+          className="text-3xl sm:text-[42px] text-center mb-10 sm:mb-14 font-Nunito font-bold text-[#FF00FF]"
         >
           Quick Videos
         </motion.h2>
+
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -173,7 +168,7 @@ export const HomeScreen = () => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+          className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
         >
           {[video1, video3, video4, video5].map((vid, idx) => (
             <motion.video
@@ -185,12 +180,12 @@ export const HomeScreen = () => {
               src={vid}
               controls
               muted
-              className="w-[300px] flex-shrink-0 rounded-2xl shadow-lg snap-center hover:scale-105 transition-transform duration-300"
+              playsInline
+              className="w-[70vw] sm:w-[300px] flex-shrink-0 rounded-2xl shadow-lg snap-center hover:scale-105 transition-transform duration-300"
             />
           ))}
         </motion.div>
       </section>
-
 
       {/* FAQ Section */}
       <motion.h1
