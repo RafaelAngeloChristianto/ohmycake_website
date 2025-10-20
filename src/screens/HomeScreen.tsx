@@ -4,12 +4,13 @@ import poster from "../assets/poster.png";
 import { Footer } from "../components/Footer";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import video_prev_cakes from "../assets/VID-20250819-WA0002.mp4";
 
-import video1 from "../assets/VID-20250819-WA0001.mp4";
-import video2 from "../assets/VID-20250819-WA0002.mp4";
-import video3 from "../assets/VID-20250819-WA0003.mp4";
-import video4 from "../assets/VID-20250819-WA0004.mp4";
-import video5 from "../assets/VID-20250819-WA0005.mp4";
+import video1 from "../assets/prev_vid1.mp4";
+import video2 from "../assets/prev_vid2.mp4";
+import video3 from "../assets/prev_vid3.mp4";
+import video4 from "../assets/prev_vid4.mp4";
+import video5 from "../assets/prev_vid5.mp4";
 
 export const HomeScreen = () => {
   const faqRef = useRef<HTMLHeadingElement>(null);
@@ -134,7 +135,7 @@ export const HomeScreen = () => {
             className="flex justify-center"
           >
             <video
-              src={video2}
+              src={video_prev_cakes}
               autoPlay
               loop
               muted
@@ -170,7 +171,7 @@ export const HomeScreen = () => {
           }}
           className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
         >
-          {[video1, video3, video4, video5].map((vid, idx) => (
+          {[video1, video2, video3, video4, video5].map((vid, idx) => (
             <motion.video
               key={idx}
               variants={{
