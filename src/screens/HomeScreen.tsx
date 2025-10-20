@@ -169,21 +169,25 @@ export const HomeScreen = () => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4"
+          className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory space-x-3 sm:space-x-6 px-2 sm:px-0 pb-4"
         >
           {[video1, video2, video3, video4, video5].map((vid, idx) => (
-            <motion.video
+            <motion.div
               key={idx}
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 show: { opacity: 1, y: 0 },
               }}
-              src={vid}
-              controls
-              muted
-              playsInline
-              className="w-[70vw] sm:w-[300px] flex-shrink-0 rounded-2xl shadow-lg snap-center hover:scale-105 transition-transform duration-300"
-            />
+              className="flex-shrink-0 snap-center"
+            >
+              <video
+                src={vid}
+                controls
+                muted
+                playsInline
+                className="w-[85vw] sm:w-[280px] md:w-[320px] rounded-2xl shadow-lg hover:scale-[1.03] transition-transform duration-300 object-cover"
+              />
+            </motion.div>
           ))}
         </motion.div>
       </section>
