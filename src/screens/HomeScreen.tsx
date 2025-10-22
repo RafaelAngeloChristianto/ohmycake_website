@@ -59,7 +59,11 @@ export const HomeScreen = () => {
           alt="Poster"
         />
 
+        {/* Existing overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+
+        {/* Smooth bottom gradient to white (mobile only) */}
+        <div className="absolute bottom-0 left-0 w-full h-[100px] bg-gradient-to-b from-transparent via-[#fff0f6] to-white pointer-events-none z-10 sm:hidden"></div>
 
         <div className="absolute top-0 left-0 w-full z-20">
           <NavBar />
