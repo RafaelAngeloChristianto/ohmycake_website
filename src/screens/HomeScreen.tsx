@@ -54,7 +54,7 @@ export const HomeScreen = () => {
       {/* Hero Section */}
       <div className="relative h-[550px] md:h-[650px] w-full">
         <img
-          className="absolute inset-0 w-full h-full object-cover object-center brightness-75"
+          className="absolute inset-0 w-full h-full object-contain bg-[#f7d9e0] brightness-75"
           src={poster}
           alt="Poster"
         />
