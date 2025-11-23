@@ -439,18 +439,38 @@ export const Cakes = () => {
     <>
       <NavBar />
 
-      <main className="flex flex-col items-center mt-[50px] px-6 py-12 bg-gray-50 min-h-screen">
-        <motion.h1
-          className="text-4xl font-bold mb-10 text-[#FF00FF] tracking-wide font-Inter"
-          initial={{ opacity: 0, y: -30 }}
+      <main className="flex flex-col items-center mt-[80px] px-6 py-16 bg-gradient-to-br from-pink-50 via-white to-purple-50 min-h-screen">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          🍰 Cakes Gallery
-        </motion.h1>
+          <motion.h1
+            className="text-5xl sm:text-6xl md:text-7xl font-bold gradient-text mb-6 tracking-wide font-Inter"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            🍰 Cakes Gallery
+          </motion.h1>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-28 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-xl text-gray-700 mt-4 max-w-2xl mx-auto"
+          >
+            Discover our beautiful collection of handcrafted cakes
+          </motion.p>
+        </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-7xl"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full max-w-7xl"
           variants={containerVariants}
           initial="hidden"
           animate="show"
@@ -458,19 +478,28 @@ export const Cakes = () => {
           {cakeImages.map((img, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
+              className="card-hover bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-pink-100 group cursor-pointer"
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setSelectedImg(img)}
             >
-              <motion.img
-                src={img}
-                alt={`Cake ${index + 1}`}
-                className="w-full h-56 object-cover rounded-xl cursor-pointer"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-                onClick={() => setSelectedImg(img)}
-              />
+              <div className="relative overflow-hidden">
+                <motion.img
+                  src={img}
+                  alt={`Cake ${index + 1}`}
+                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                    <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -478,20 +507,38 @@ export const Cakes = () => {
         {/* Modal for selected image */}
         {selectedImg && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
             onClick={() => setSelectedImg(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.img
-              src={selectedImg}
-              alt="Selected Cake"
-              className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl cursor-pointer"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.3 }}
-            />
+            <motion.div
+              className="relative max-h-[90vh] max-w-[90vw]"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              <img
+                src={selectedImg}
+                alt="Selected Cake"
+                className="max-h-full max-w-full rounded-2xl shadow-2xl border-4 border-white/20"
+              />
+              <motion.button
+                className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full p-2 shadow-lg hover:bg-white transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImg(null);
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </motion.button>
+            </motion.div>
           </motion.div>
         )}
       </main>
