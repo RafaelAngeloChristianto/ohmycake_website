@@ -1,10 +1,10 @@
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import { easeOut, motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const modules = import.meta.glob(
-  "../assets/**/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}",
+  "../assets/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}",
   { eager: true },
 );
 const cakeImages = Object.values(modules).map((module: any) => module.default);
@@ -31,7 +31,7 @@ const itemVariants = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
