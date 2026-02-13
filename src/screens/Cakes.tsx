@@ -1,547 +1,431 @@
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import { easeOut } from "framer-motion";
+import { easeOut, motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
-import img1 from "../assets/IMG-20250819-WA0004.jpg";
-import img2 from "../assets/IMG-20250819-WA0005.jpg";
-import img3 from "../assets/IMG-20250819-WA0006.jpg";
-import img4 from "../assets/IMG-20250819-WA0007.jpg";
-import img5 from "../assets/IMG-20250819-WA0008.jpg";
-import img6 from "../assets/IMG-20250819-WA0009.jpg";
-import img7 from "../assets/IMG-20250819-WA0010.jpg";
-import img8 from "../assets/IMG-20250819-WA0011.jpg";
-import img9 from "../assets/IMG-20250819-WA0012.jpg";
-import img10 from "../assets/IMG-20250819-WA0013.jpg";
-import img11 from "../assets/IMG-20250819-WA0014.jpg";
-import img12 from "../assets/IMG-20250819-WA0015.jpg";
-import img13 from "../assets/IMG-20250819-WA0016.jpg";
-import img14 from "../assets/IMG-20250819-WA0017.jpg";
-import img15 from "../assets/IMG-20250819-WA0018.jpg";
-import img16 from "../assets/IMG-20250819-WA0019.jpg";
-import img17 from "../assets/IMG-20250819-WA0020.jpg";
-import img18 from "../assets/IMG-20250819-WA0021.jpg";
-import img19 from "../assets/IMG-20250819-WA0022.jpg";
-import img20 from "../assets/IMG-20250819-WA0023.jpg";
-import img21 from "../assets/IMG-20250819-WA0024.jpg";
-import img22 from "../assets/IMG-20250819-WA0025.jpg";
-import img23 from "../assets/IMG-20250819-WA0026.jpg";
-import img24 from "../assets/IMG-20250819-WA0027.jpg";
-import img25 from "../assets/IMG-20250819-WA0028.jpg";
-import img26 from "../assets/IMG-20250819-WA0029.jpg";
-import img27 from "../assets/IMG-20250819-WA0030.jpg";
-import img28 from "../assets/IMG-20250819-WA0031.jpg";
-import img29 from "../assets/IMG-20250819-WA0032.jpg";
-import img30 from "../assets/IMG-20250819-WA0033.jpg";
-import img31 from "../assets/IMG-20250819-WA0034.jpg";
-import img32 from "../assets/IMG-20250819-WA0035.jpg";
-import img33 from "../assets/IMG-20250819-WA0036.jpg";
-import img34 from "../assets/IMG-20250819-WA0037.jpg";
-import img35 from "../assets/IMG-20250819-WA0038.jpg";
-import img36 from "../assets/IMG-20250819-WA0039.jpg";
-import img37 from "../assets/IMG-20250819-WA0040.jpg";
-import img38 from "../assets/IMG-20250819-WA0041.jpg";
-import img39 from "../assets/IMG-20250819-WA0042.jpg";
-import img40 from "../assets/IMG-20250819-WA0043.jpg";
-import img41 from "../assets/IMG-20250819-WA0044.jpg";
-import img42 from "../assets/IMG-20250819-WA0045.jpg";
-import img43 from "../assets/IMG-20250819-WA0046.jpg";
-import img44 from "../assets/IMG-20250819-WA0047.jpg";
-import img45 from "../assets/IMG-20250819-WA0048.jpg";
-import img46 from "../assets/IMG-20250819-WA0049.jpg";
-import img47 from "../assets/IMG-20250819-WA0050.jpg";
-import img48 from "../assets/IMG-20250819-WA0051.jpg";
-import img49 from "../assets/IMG-20250819-WA0052.jpg";
-import img50 from "../assets/IMG-20250819-WA0053.jpg";
-import img51 from "../assets/IMG-20250819-WA0054.jpg";
-import img52 from "../assets/IMG-20250819-WA0055.jpg";
-import img53 from "../assets/IMG-20250819-WA0056.jpg";
-import img54 from "../assets/IMG-20250819-WA0057.jpg";
-import img55 from "../assets/IMG-20250819-WA0058.jpg";
-import img56 from "../assets/IMG-20250819-WA0059.jpg";
-import img57 from "../assets/IMG-20250819-WA0060.jpg";
-import img58 from "../assets/IMG-20250819-WA0061.jpg";
-import img59 from "../assets/IMG-20250819-WA0062.jpg";
-import img60 from "../assets/IMG-20250819-WA0063.jpg";
-import img61 from "../assets/IMG-20250819-WA0064.jpg";
-import img62 from "../assets/IMG-20250819-WA0065.jpg";
-import img63 from "../assets/IMG-20250819-WA0066.jpg";
-import img64 from "../assets/IMG-20250819-WA0067.jpg";
-import img65 from "../assets/IMG-20250819-WA0068.jpg";
-import img66 from "../assets/IMG-20250819-WA0069.jpg";
-import img67 from "../assets/IMG-20250819-WA0070.jpg";
-import img68 from "../assets/IMG-20250819-WA0071.jpg";
-import img69 from "../assets/IMG-20250819-WA0072.jpg";
-import img70 from "../assets/IMG-20250819-WA0073.jpg";
-import img71 from "../assets/IMG-20250819-WA0074.jpg";
-import img72 from "../assets/IMG-20250819-WA0075.jpg";
-import img73 from "../assets/IMG-20250819-WA0076.jpg";
-import img74 from "../assets/IMG-20250819-WA0077.jpg";
-import img75 from "../assets/IMG-20250819-WA0078.jpg";
-import img76 from "../assets/IMG-20250819-WA0079.jpg";
-import img77 from "../assets/IMG-20250819-WA0080.jpg";
-import img78 from "../assets/IMG-20250819-WA0081.jpg";
-import img79 from "../assets/IMG-20250819-WA0082.jpg";
-import img80 from "../assets/IMG-20250819-WA0083.jpg";
-import img81 from "../assets/IMG-20250819-WA0084.jpg";
-import img82 from "../assets/IMG-20250819-WA0085.jpg";
-import img83 from "../assets/IMG-20250819-WA0086.jpg";
-import img84 from "../assets/IMG-20250819-WA0087.jpg";
-import img85 from "../assets/IMG-20250819-WA0088.jpg";
-import img86 from "../assets/IMG-20250819-WA0089.jpg";
-import img87 from "../assets/IMG-20250819-WA0090.jpg";
-import img88 from "../assets/IMG-20250819-WA0091.jpg";
-import img89 from "../assets/IMG-20250819-WA0092.jpg";
-import img90 from "../assets/IMG-20250819-WA0093.jpg";
-import img91 from "../assets/IMG-20250819-WA0094.jpg";
-import img92 from "../assets/IMG-20250819-WA0095.jpg";
-import img93 from "../assets/IMG-20250819-WA0096.jpg";
-import img94 from "../assets/IMG-20250819-WA0097.jpg";
-import img95 from "../assets/IMG-20250819-WA0098.jpg";
-import img96 from "../assets/IMG-20250819-WA0099.jpg";
-import img97 from "../assets/IMG-20250819-WA0100.jpg";
-import img98 from "../assets/IMG-20250819-WA0101.jpg";
-import img99 from "../assets/IMG-20250819-WA0102.jpg";
-import img100 from "../assets/IMG-20250819-WA0103.jpg";
-import img101 from "../assets/IMG-20250819-WA0104.jpg";
-import img102 from "../assets/IMG-20250819-WA0105.jpg";
-import img103 from "../assets/IMG-20250819-WA0106.jpg";
-import img104 from "../assets/IMG-20250819-WA0107.jpg";
-import img105 from "../assets/IMG-20250819-WA0108.jpg";
-import img106 from "../assets/IMG-20250819-WA0109.jpg";
-import img107 from "../assets/IMG-20250819-WA0110.jpg";
-import img108 from "../assets/IMG-20250819-WA0111.jpg";
-import img109 from "../assets/IMG-20250819-WA0112.jpg";
-import img110 from "../assets/IMG-20250819-WA0113.jpg";
-import img111 from "../assets/IMG-20250819-WA0114.jpg";
-import img112 from "../assets/IMG-20250819-WA0115.jpg";
-import img113 from "../assets/IMG-20250819-WA0116.jpg";
-import img114 from "../assets/IMG-20250819-WA0117.jpg";
-import img115 from "../assets/IMG-20250819-WA0118.jpg";
-import img116 from "../assets/IMG-20250819-WA0119.jpg";
-import img117 from "../assets/IMG-20250819-WA0120.jpg";
-import img118 from "../assets/IMG-20250819-WA0121.jpg";
-import img119 from "../assets/IMG-20250819-WA0122.jpg";
-import img120 from "../assets/IMG-20250819-WA0123.jpg";
-import img121 from "../assets/IMG-20250819-WA0124.jpg";
-import img122 from "../assets/IMG-20250819-WA0125.jpg";
-import img123 from "../assets/IMG-20250819-WA0126.jpg";
-import img124 from "../assets/IMG-20250819-WA0127.jpg";
-import img125 from "../assets/IMG-20250819-WA0128.jpg";
-import img126 from "../assets/IMG-20250819-WA0129.jpg";
-import img127 from "../assets/IMG-20250819-WA0130.jpg";
-import img128 from "../assets/IMG-20250819-WA0131.jpg";
-import img129 from "../assets/IMG-20250819-WA0132.jpg";
-import img130 from "../assets/IMG-20250819-WA0133.jpg";
-import img131 from "../assets/IMG-20250819-WA0134.jpg";
-import img132 from "../assets/IMG-20250819-WA0135.jpg";
-import img133 from "../assets/IMG-20250819-WA0136.jpg";
-import img134 from "../assets/IMG-20250819-WA0137.jpg";
-import img135 from "../assets/IMG-20250819-WA0138.jpg";
-import img136 from "../assets/IMG-20250819-WA0139.jpg";
-import img137 from "../assets/IMG-20250819-WA0140.jpg";
-import img138 from "../assets/IMG-20250819-WA0141.jpg";
-import img139 from "../assets/IMG-20250819-WA0142.jpg";
-import img140 from "../assets/IMG-20250819-WA0143.jpg";
-import img141 from "../assets/IMG-20250819-WA0144.jpg";
-import img142 from "../assets/IMG-20250819-WA0145.jpg";
-import img143 from "../assets/IMG-20250819-WA0146.jpg";
-import img144 from "../assets/IMG-20250819-WA0147.jpg";
-import img145 from "../assets/IMG-20250819-WA0148.jpg";
-import img146 from "../assets/IMG-20250819-WA0149.jpg";
-import img147 from "../assets/IMG-20250819-WA0150.jpg";
-import img148 from "../assets/IMG-20250819-WA0151.jpg";
-import img149 from "../assets/IMG-20250819-WA0152.jpg";
-import img150 from "../assets/IMG-20250819-WA0153.jpg";
-import img151 from "../assets/IMG-20250819-WA0154.jpg";
-import img152 from "../assets/IMG-20250819-WA0155.jpg";
-import img153 from "../assets/IMG-20250819-WA0156.jpg";
-import img154 from "../assets/IMG-20250819-WA0157.jpg";
-import img155 from "../assets/IMG-20250819-WA0158.jpg";
-import img156 from "../assets/IMG-20250819-WA0159.jpg";
-import img157 from "../assets/IMG-20250819-WA0160.jpg";
-import img158 from "../assets/IMG-20250819-WA0161.jpg";
-import img159 from "../assets/IMG-20250819-WA0162.jpg";
-import img160 from "../assets/IMG-20250819-WA0163.jpg";
-import img161 from "../assets/IMG-20250819-WA0164.jpg";
-import img162 from "../assets/IMG-20250819-WA0165.jpg";
-import img163 from "../assets/IMG-20250819-WA0166.jpg";
-import img164 from "../assets/IMG-20250819-WA0167.jpg";
-import img165 from "../assets/IMG-20250819-WA0168.jpg";
-import img166 from "../assets/IMG-20250819-WA0169.jpg";
-import img167 from "../assets/IMG-20250819-WA0170.jpg";
-import img168 from "../assets/IMG-20250819-WA0171.jpg";
-import img169 from "../assets/IMG-20250819-WA0172.jpg";
-import img170 from "../assets/IMG-20250819-WA0173.jpg";
-import img171 from "../assets/IMG-20250819-WA0174.jpg";
-import img172 from "../assets/IMG-20250819-WA0175.jpg";
-import img173 from "../assets/IMG-20250819-WA0176.jpg";
-import img174 from "../assets/IMG-20250819-WA0177.jpg";
-import img175 from "../assets/IMG-20250819-WA0178.jpg";
-import img176 from "../assets/IMG-20250819-WA0179.jpg";
-import img177 from "../assets/IMG-20250819-WA0180.jpg";
-import img178 from "../assets/IMG-20250819-WA0181.jpg";
-import img179 from "../assets/IMG-20250819-WA0182.jpg";
-import img180 from "../assets/IMG-20250819-WA0183.jpg";
-import img181 from "../assets/IMG-20250819-WA0184.jpg";
-import img182 from "../assets/IMG-20250819-WA0185.jpg";
-import img183 from "../assets/IMG-20250819-WA0186.jpg";
-import img184 from "../assets/IMG-20250819-WA0187.jpg";
-import img185 from "../assets/IMG-20250819-WA0188.jpg";
-import img186 from "../assets/IMG-20250819-WA0189.jpg";
-import img187 from "../assets/IMG-20250819-WA0190.jpg";
-import img188 from "../assets/IMG-20250819-WA0191.jpg";
-import img189 from "../assets/IMG-20250819-WA0192.jpg";
-import img190 from "../assets/IMG-20250819-WA0193.jpg";
-import img191 from "../assets/IMG-20250819-WA0194.jpg";
-import img192 from "../assets/IMG-20250819-WA0195.jpg";
-import img193 from "../assets/IMG-20250819-WA0196.jpg";
-import img194 from "../assets/IMG-20250819-WA0197.jpg";
-import img195 from "../assets/IMG-20250819-WA0198.jpg";
-import img196 from "../assets/IMG-20250819-WA0199.jpg";
-import img197 from "../assets/IMG-20250819-WA0200.jpg";
-import img198 from "../assets/IMG-20250819-WA0201.jpg";
-import img199 from "../assets/IMG-20250819-WA0202.jpg";
-import img200 from "../assets/IMG-20250819-WA0203.jpg";
-import img201 from "../assets/IMG-20250819-WA0204.jpg";
-import img202 from "../assets/IMG-20250819-WA0205.jpg";
-import { motion } from "framer-motion";
-import { useState } from "react";
+const modules = import.meta.glob(
+  "../assets/**/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}",
+  { eager: true },
+);
+const cakeImages = Object.values(modules).map((module: any) => module.default);
 
-const cakeImages = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-  img13,
-  img14,
-  img15,
-  img16,
-  img17,
-  img18,
-  img19,
-  img20,
-  img21,
-  img22,
-  img23,
-  img24,
-  img25,
-  img26,
-  img27,
-  img28,
-  img29,
-  img30,
-  img31,
-  img32,
-  img33,
-  img34,
-  img35,
-  img36,
-  img37,
-  img38,
-  img39,
-  img40,
-  img41,
-  img42,
-  img43,
-  img44,
-  img45,
-  img46,
-  img47,
-  img48,
-  img49,
-  img50,
-  img51,
-  img52,
-  img53,
-  img54,
-  img55,
-  img56,
-  img57,
-  img58,
-  img59,
-  img60,
-  img61,
-  img62,
-  img63,
-  img64,
-  img65,
-  img66,
-  img67,
-  img68,
-  img69,
-  img70,
-  img71,
-  img72,
-  img73,
-  img74,
-  img75,
-  img76,
-  img77,
-  img78,
-  img79,
-  img80,
-  img81,
-  img82,
-  img83,
-  img84,
-  img85,
-  img86,
-  img87,
-  img88,
-  img89,
-  img90,
-  img91,
-  img92,
-  img93,
-  img94,
-  img95,
-  img96,
-  img97,
-  img98,
-  img99,
-  img100,
-  img101,
-  img102,
-  img103,
-  img104,
-  img105,
-  img106,
-  img107,
-  img108,
-  img109,
-  img110,
-  img111,
-  img112,
-  img113,
-  img114,
-  img115,
-  img116,
-  img117,
-  img118,
-  img119,
-  img120,
-  img121,
-  img122,
-  img123,
-  img124,
-  img125,
-  img126,
-  img127,
-  img128,
-  img129,
-  img130,
-  img131,
-  img132,
-  img133,
-  img134,
-  img135,
-  img136,
-  img137,
-  img138,
-  img139,
-  img140,
-  img141,
-  img142,
-  img143,
-  img144,
-  img145,
-  img146,
-  img147,
-  img148,
-  img149,
-  img150,
-  img151,
-  img152,
-  img153,
-  img154,
-  img155,
-  img156,
-  img157,
-  img158,
-  img159,
-  img160,
-  img161,
-  img162,
-  img163,
-  img164,
-  img165,
-  img166,
-  img167,
-  img168,
-  img169,
-  img170,
-  img171,
-  img172,
-  img173,
-  img174,
-  img175,
-  img176,
-  img177,
-  img178,
-  img179,
-  img180,
-  img181,
-  img182,
-  img183,
-  img184,
-  img185,
-  img186,
-  img187,
-  img188,
-  img189,
-  img190,
-  img191,
-  img192,
-  img193,
-  img194,
-  img195,
-  img196,
-  img197,
-  img198,
-  img199,
-  img200,
-  img201,
-  img202,
-];
+// Simplified image data with just URLs
+const cakeData = cakeImages.map((img, index) => ({
+  id: index,
+  url: img,
+}));
 
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.08,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 30 },
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
   show: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.4, ease: easeOut },
+    transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
   },
 };
 
 export const Cakes = () => {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Scroll event listener for back to top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Navigation functions
+  const goToNext = () => {
+    if (selectedImg) {
+      const currentIndex = cakeData.findIndex((c) => c.url === selectedImg);
+      const nextIndex = (currentIndex + 1) % cakeData.length;
+      setSelectedImg(cakeData[nextIndex].url);
+    }
+  };
+
+  const goToPrevious = () => {
+    if (selectedImg) {
+      const currentIndex = cakeData.findIndex((c) => c.url === selectedImg);
+      const prevIndex = (currentIndex - 1 + cakeData.length) % cakeData.length;
+      setSelectedImg(cakeData[prevIndex].url);
+    }
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImg) {
+        if (e.key === "ArrowRight") {
+          goToNext();
+        } else if (e.key === "ArrowLeft") {
+          goToPrevious();
+        } else if (e.key === "Escape") {
+          setSelectedImg(null);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImg]);
 
   return (
     <>
       <NavBar />
 
-      <main className="flex flex-col items-center mt-[80px] px-6 py-16 bg-gradient-to-br from-pink-50 via-white to-purple-50 min-h-screen">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl font-bold gradient-text mb-6 tracking-wide font-Inter"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            🍰 Cakes Gallery
-          </motion.h1>
+      {/* Hero Section with Parallax Effect */}
+      <motion.section
+        className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-900/90 to-purple-900/90 mix-blend-multiply" />
           <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="w-28 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"
+            className="absolute inset-0 bg-[url('/hero-pattern.svg')] bg-cover bg-center"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 20, repeat: Infinity }}
           />
+        </div>
+
+        <div className="relative z-10 text-center text-white px-4">
+          <motion.h1
+            className="text-6xl sm:text-7xl md:text-8xl font-bold mb-6 font-Inter"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Our <span className="text-pink-200">Cakes</span>
+          </motion.h1>
           <motion.p
+            className="text-xl sm:text-2xl text-pink-100 max-w-2xl mx-auto"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            Each cake is a masterpiece, crafted with love and the finest
+            ingredients
+          </motion.p>
+        </div>
+      </motion.section>
+
+      <main className="bg-gradient-to-br from-pink-50 via-white to-purple-50 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Simplified Stats Section */}
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-xl text-gray-700 mt-4 max-w-2xl mx-auto"
+            transition={{ delay: 0.6 }}
           >
-            Discover our beautiful collection of handcrafted cakes
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full max-w-7xl"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
-          {cakeImages.map((img, index) => (
             <motion.div
-              key={index}
-              className="card-hover bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-pink-100 group cursor-pointer"
-              variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setSelectedImg(img)}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-pink-100"
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="relative overflow-hidden">
-                <motion.img
-                  src={img}
-                  alt={`Cake ${index + 1}`}
-                  className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
-                    <svg className="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              <div className="text-3xl mb-2">🎂</div>
+              <div className="text-2xl font-bold text-gray-800">100+</div>
+              <div className="text-sm text-gray-600">Happy Clients</div>
             </motion.div>
-          ))}
-        </motion.div>
 
-        {/* Modal for selected image */}
+            <motion.div
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-pink-100"
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="text-3xl mb-2">✨</div>
+              <div className="text-2xl font-bold text-gray-800">Custom</div>
+              <div className="text-sm text-gray-600">Designs Available</div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-pink-100 col-span-2 md:col-span-1"
+              whileHover={{ y: -5, scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="text-3xl mb-2">⭐</div>
+              <div className="text-2xl font-bold text-gray-800">12+</div>
+              <div className="text-sm text-gray-600">Years Experience</div>
+            </motion.div>
+          </motion.div>
+
+          {/* Gallery Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Our Gallery
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full" />
+          </motion.div>
+
+          {/* Cake Grid with Enhanced Cards */}
+          {isLoading ? (
+            <div className="flex justify-center items-center h-64">
+              <motion.div
+                className="w-16 h-16 border-4 border-pink-200 border-t-pink-600 rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              />
+            </div>
+          ) : (
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+            >
+              <AnimatePresence>
+                {cakeData.map((cake) => (
+                  <motion.div
+                    key={cake.id}
+                    layout
+                    variants={itemVariants}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    className="group relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                    onClick={() => setSelectedImg(cake.url)}
+                    onHoverStart={() => setHoveredId(cake.id)}
+                    onHoverEnd={() => setHoveredId(null)}
+                    whileHover={{ y: -10 }}
+                  >
+                    {/* Image Container with Overlay */}
+                    <div className="relative h-80 overflow-hidden">
+                      <motion.img
+                        src={cake.url}
+                        alt={`Cake ${cake.id + 1}`}
+                        className="w-full h-full object-cover"
+                        animate={{ scale: hoveredId === cake.id ? 1.1 : 1 }}
+                        transition={{ duration: 0.6 }}
+                        loading="lazy"
+                      />
+
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {/* Quick View Button */}
+                      <motion.div
+                        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        initial={false}
+                      >
+                        <motion.button
+                          className="bg-white text-gray-800 px-6 py-3 rounded-full font-semibold shadow-xl hover:bg-pink-50 transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedImg(cake.url);
+                          }}
+                        >
+                          Quick View
+                        </motion.button>
+                      </motion.div>
+                    </div>
+
+                    {/* Simple Caption */}
+                    <div className="p-4 bg-white text-center">
+                      <p className="text-gray-600 text-sm">Click to enlarge</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </div>
+      </main>
+
+      {/* Back to Top Button */}
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 bg-gradient-to-r from-pink-500 to-purple-600 text-white p-4 rounded-full shadow-2xl z-40 group"
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            whileHover={{
+              scale: 1.1,
+              boxShadow:
+                "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+            }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <svg
+              className="w-6 h-6 group-hover:-translate-y-1 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2.5}
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
+            </svg>
+            <span className="sr-only">Back to top</span>
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Enhanced Modal with Left and Right Navigation */}
+      <AnimatePresence>
         {selectedImg && (
           <motion.div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex justify-center items-center z-50 p-4"
+            className="fixed inset-0 bg-black/95 backdrop-blur-xl flex justify-center items-center z-50 p-4"
             onClick={() => setSelectedImg(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* Left Navigation Arrow */}
+            <motion.button
+              className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full p-3 md:p-4 shadow-xl hover:bg-white transition-colors z-10 group"
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrevious();
+              }}
+              whileHover={{ scale: 1.1, x: -5 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ delay: 0.2 }}
+            >
+              <svg
+                className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span className="sr-only">Previous image</span>
+            </motion.button>
+
+            {/* Right Navigation Arrow */}
+            <motion.button
+              className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full p-3 md:p-4 shadow-xl hover:bg-white transition-colors z-10 group"
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              whileHover={{ scale: 1.1, x: 5 }}
+              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ delay: 0.2 }}
+            >
+              <svg
+                className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              <span className="sr-only">Next image</span>
+            </motion.button>
+
             <motion.div
               className="relative max-h-[90vh] max-w-[90vw]"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              initial={{ scale: 0.8, opacity: 0, rotateY: -15 }}
+              animate={{ scale: 1, opacity: 1, rotateY: 0 }}
+              exit={{ scale: 0.8, opacity: 0, rotateY: 15 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <img
+              <motion.img
                 src={selectedImg}
                 alt="Selected Cake"
-                className="max-h-full max-w-full rounded-2xl shadow-2xl border-4 border-white/20"
+                className="max-h-[85vh] max-w-[85vw] rounded-3xl shadow-2xl border-4 border-white/20"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
               />
-              <motion.button
-                className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full p-2 shadow-lg hover:bg-white transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImg(null);
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </motion.button>
+
+              {/* Close Button */}
+              <div className="absolute top-4 right-4">
+                <motion.button
+                  className="bg-white/90 backdrop-blur-sm text-gray-800 rounded-full p-3 shadow-xl hover:bg-white transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImg(null);
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </motion.button>
+              </div>
+
+              {/* Image Counter */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+                {cakeData.findIndex((c) => c.url === selectedImg) + 1} /{" "}
+                {cakeData.length}
+              </div>
             </motion.div>
           </motion.div>
         )}
-      </main>
+      </AnimatePresence>
 
       <Footer />
     </>

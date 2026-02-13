@@ -1,8 +1,6 @@
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import logo from "../assets/logo.png";
 import { motion } from "framer-motion";
-import caligraphy from "../assets/caligraphy.png";
 
 const About = () => {
   return (
@@ -45,7 +43,7 @@ const About = () => {
             className="flex justify-center"
           >
             <img
-              src={logo}
+              src="/logo.png"
               alt="Baker"
               className="w-[350px] h-[350px] object-cover rounded-full shadow-xl hover:scale-105 transition-transform duration-300"
             />
@@ -89,7 +87,7 @@ const About = () => {
           <h3 className="text-3xl font-bold gradient-text mb-4">Our Story</h3>
           <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -99,10 +97,15 @@ const About = () => {
             className="card-hover bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-pink-100 text-center"
           >
             <div className="text-4xl mb-4">🎂</div>
-            <h4 className="text-xl font-bold text-gray-800 mb-3">Fresh Ingredients</h4>
-            <p className="text-gray-600">We use only the finest, freshest ingredients to ensure every cake tastes amazing.</p>
+            <h4 className="text-xl font-bold text-gray-800 mb-3">
+              Fresh Ingredients
+            </h4>
+            <p className="text-gray-600">
+              We use only the finest, freshest ingredients to ensure every cake
+              tastes amazing.
+            </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -111,10 +114,15 @@ const About = () => {
             className="card-hover bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-pink-100 text-center"
           >
             <div className="text-4xl mb-4">🎨</div>
-            <h4 className="text-xl font-bold text-gray-800 mb-3">Custom Designs</h4>
-            <p className="text-gray-600">Every cake is uniquely designed to match your special occasion and personal style.</p>
+            <h4 className="text-xl font-bold text-gray-800 mb-3">
+              Custom Designs
+            </h4>
+            <p className="text-gray-600">
+              Every cake is uniquely designed to match your special occasion and
+              personal style.
+            </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,8 +131,13 @@ const About = () => {
             className="card-hover bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-pink-100 text-center"
           >
             <div className="text-4xl mb-4">💝</div>
-            <h4 className="text-xl font-bold text-gray-800 mb-3">Made with Love</h4>
-            <p className="text-gray-600">Each cake is crafted with passion and care to make your celebrations unforgettable.</p>
+            <h4 className="text-xl font-bold text-gray-800 mb-3">
+              Made with Love
+            </h4>
+            <p className="text-gray-600">
+              Each cake is crafted with passion and care to make your
+              celebrations unforgettable.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -138,34 +151,52 @@ const About = () => {
           viewport={{ once: true }}
           className="card-hover bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-pink-100"
         >
-          <h3 className="text-3xl font-bold gradient-text text-center mb-8">Why Choose Oh My Cake?</h3>
+          <h3 className="text-3xl font-bold gradient-text text-center mb-8">
+            Why Choose Oh My Cake?
+          </h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-start space-x-3">
               <span className="text-2xl">✨</span>
               <div>
-                <h4 className="font-bold text-gray-800 mb-1">Quality Guaranteed</h4>
-                <p className="text-gray-600">Premium ingredients and expert craftsmanship in every cake.</p>
+                <h4 className="font-bold text-gray-800 mb-1">
+                  Quality Guaranteed
+                </h4>
+                <p className="text-gray-600">
+                  Premium ingredients and expert craftsmanship in every cake.
+                </p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <span className="text-2xl">🚚</span>
               <div>
-                <h4 className="font-bold text-gray-800 mb-1">Timely Delivery</h4>
-                <p className="text-gray-600">Your cake will be ready exactly when you need it.</p>
+                <h4 className="font-bold text-gray-800 mb-1">
+                  Timely Delivery
+                </h4>
+                <p className="text-gray-600">
+                  Your cake will be ready exactly when you need it.
+                </p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <span className="text-2xl">💬</span>
               <div>
-                <h4 className="font-bold text-gray-800 mb-1">Personal Service</h4>
-                <p className="text-gray-600">Direct communication to bring your vision to life.</p>
+                <h4 className="font-bold text-gray-800 mb-1">
+                  Personal Service
+                </h4>
+                <p className="text-gray-600">
+                  Direct communication to bring your vision to life.
+                </p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <span className="text-2xl">🎉</span>
               <div>
-                <h4 className="font-bold text-gray-800 mb-1">Special Occasions</h4>
-                <p className="text-gray-600">Perfect for birthdays, weddings, and all celebrations.</p>
+                <h4 className="font-bold text-gray-800 mb-1">
+                  Special Occasions
+                </h4>
+                <p className="text-gray-600">
+                  Perfect for birthdays, weddings, and all celebrations.
+                </p>
               </div>
             </div>
           </div>
@@ -176,11 +207,13 @@ const About = () => {
       <div className="flex justify-end pr-6 pb-4">
         <div className="text-right">
           <p className="text-xs text-gray-500">Website managed by</p>
-          <img
-            src={caligraphy}
-            alt="Rafael Angelo"
-            className="w-24 opacity-80"
-          />
+          <a href="https://rafaelangelo.site/" target="_blank">
+            <img
+              src="/caligraphy.png"
+              alt="Rafael Angelo"
+              className="w-24 opacity-80"
+            />
+          </a>
         </div>
       </div>
 

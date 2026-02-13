@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
 import { SiGmail, SiWhatsapp } from "react-icons/si";
-import logo from "../assets/logo.png";
+import logo from "/logo.png";
 import { motion } from "framer-motion";
 
 const Contact = () => {
