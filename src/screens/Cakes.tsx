@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const modules = import.meta.glob(
