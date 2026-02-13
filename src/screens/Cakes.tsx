@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import { Footer } from "../components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const modules = import.meta.glob(
@@ -25,13 +25,13 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8, y: 50 },
   show: {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.0, 0.0, 0.2, 1.0] },
+    transition: { duration: 0.6 },
   },
 };
 
